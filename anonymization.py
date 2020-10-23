@@ -21,8 +21,8 @@ class anonymize_swe:
 
         if firstnames is None:
             # load default firstnames
-            names_m = self._load_csv(self.currentdir + '/names/names_m_minus_common_terms.csv')
-            names_f = self._load_csv(self.currentdir + '/names/names_f_minus_common_terms.csv')
+            names_m = self._load_terms_from_file(self.currentdir + '/names/names_m_minus_common_terms.csv')
+            names_f = self._load_terms_from_file(self.currentdir + '/names/names_f_minus_common_terms.csv')
             self._all_names.extend(names_m)
             self._all_names.extend(names_f)
 
@@ -31,7 +31,7 @@ class anonymize_swe:
 
         if lastnames is None:
             # load default lastnames
-            names_efternamn = self._load_csv(self.currentdir + '/names/names_efternamn100_minus_common_terms.csv')
+            names_efternamn = self._load_terms_from_file(self.currentdir + '/names/names_efternamn100_minus_common_terms.csv')
             self._all_names.extend(names_efternamn)
         else:
             self._all_names.extend(lastnames)
@@ -54,15 +54,11 @@ class anonymize_swe:
         
         return False
 
-    def _load_csv(self, filename):
-        data = []
-        with open(filename, 'rt') as csvfile:
-            readr = csv.reader(csvfile, delimiter=' ', quotechar='|')
-            for row in readr:
-                if len(row)>0:
-                    data.append(row[0])
-
-        return data
+    def _load_terms_from_file(self, filepath):
+        with open(filepath) as file:
+            termer = file.readlines()
+        termer = [x.strip() for x in termer]
+        return termer
 
     def checkWord(self,word):
         

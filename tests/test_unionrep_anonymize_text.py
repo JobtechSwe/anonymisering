@@ -22,6 +22,24 @@ def test_anonymize_unionrep_name_true_positive(unionrep_anonymize):
     removedSentences = res[1]
 
     assert len(removedSentences) == 1
+    
+    
+
+# @pytest.mark.skip(reason="Temporarily disabled")
+@pytest.mark.unit
+def test_anonymize_unionrep_name_true_positive_temp(unionrep_anonymize):
+    print('\n============================', sys._getframe().f_code.co_name, '============================')
+    input_text = '''Facklig representant är Anna Persson, 070-123123. Om du har lust och möjlighet så uppmuntrar vi dig gärna att spela in ett videoklipp där du kortfattat berättar mer om dig själv och varför du är intresserad av att arbeta hos oss. Videoklippet kan du sedan bifoga i vårt HR-system. Din presentation via video blir ett komplement till din ansökan och hjälper oss att skapa en bild av vem du är.'''
+    res = unionrep_anonymize.anonymizeText(input_text, [], [])
+    # output = res[0]
+    # print(output)
+    removedSentences = res[1]
+    # print(removedSentences)
+
+    assert len(removedSentences) == 1
+    
+    
+    
 
 # @pytest.mark.skip(reason="Temporarily disabled")
 @pytest.mark.unit
