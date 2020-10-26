@@ -5,7 +5,7 @@ setup(
     version='1.0.2',
     packages=find_packages(),
     package_data = {
-        'jobtech-anonymisering': ['resources/names/*']
+        'jobtech-anonymisering': ['resources/**/*']
     },
     include_package_data=True,
     install_requires=[
