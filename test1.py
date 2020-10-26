@@ -1,4 +1,4 @@
-import anonymization
+from jobtech.anonymisering import anonymization
 
 anonymize = anonymization.anonymize_swe()
 anonymize.initialize()

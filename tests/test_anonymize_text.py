@@ -2,7 +2,8 @@ import os
 import sys
 import pytest
 # import requests
-import anonymization
+# import anonymization
+from jobtech.anonymisering import anonymization
 
 anonymize = anonymization.anonymize_swe()
 anonymize.initialize()
