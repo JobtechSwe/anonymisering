@@ -4,6 +4,9 @@ setup(
     name='jobtech-anonymisering',
     version='1.0.1',
     packages=find_packages(),
+    package_data = {
+        'jobtech_anonymisering': ['names/*']
+    },
     include_package_data=True,
     install_requires=[
         'nltk'

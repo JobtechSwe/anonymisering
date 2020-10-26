@@ -21,8 +21,8 @@ class anonymize_swe:
 
         if firstnames is None:
             # load default firstnames
-            names_m = self._load_terms_from_file(self.currentdir + '/../../names/names_m_minus_common_terms.csv')
-            names_f = self._load_terms_from_file(self.currentdir + '/../../names/names_f_minus_common_terms.csv')
+            names_m = self._load_terms_from_file(self.currentdir + '/resources/names/names_m_minus_common_terms.csv')
+            names_f = self._load_terms_from_file(self.currentdir + '/resources/names/names_f_minus_common_terms.csv')
             self._all_names.extend(names_m)
             self._all_names.extend(names_f)
 
@@ -31,7 +31,7 @@ class anonymize_swe:
 
         if lastnames is None:
             # load default lastnames
-            names_efternamn = self._load_terms_from_file(self.currentdir + '/../../names/names_efternamn100_minus_common_terms.csv')
+            names_efternamn = self._load_terms_from_file(self.currentdir + '/resources/names/names_efternamn100_minus_common_terms.csv')
             self._all_names.extend(names_efternamn)
         else:
             self._all_names.extend(lastnames)
