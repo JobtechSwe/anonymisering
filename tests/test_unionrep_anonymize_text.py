@@ -2,7 +2,7 @@ import os
 import sys
 import pytest
 # import requests
-import unionrep_anonymization
+from jobtech.anonymisering import unionrep_anonymization
 
 
 @pytest.fixture(scope="module")
