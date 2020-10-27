@@ -2,10 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='jobtech-anonymisering',
-    version='1.0.2',
+    version='1.0.3',
     packages=find_packages(),
     package_data = {
-        'jobtech-anonymisering': ['resources/names/*']
+        'jobtech': ['anonymisering/resources/names/*.csv']
     },
     include_package_data=True,
     install_requires=[
