@@ -5,3 +5,8 @@ Tar bort hela meningar från text som innehåller 1) telefonnummer, 2) e-postadr
 - Vanligaste svenska för- och efternamnen enligt SCBs namnstatistik.
 
 Se [test1.py](test1.py) för exempelanvändning.
+
+## Install 
+pip install -r requirements.txt
+python setup.py develop
+
